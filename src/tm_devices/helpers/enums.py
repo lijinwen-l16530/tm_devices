@@ -148,6 +148,12 @@ class SupportedModels(CustomStrEnum):
     MSO70KC = "MSO70KC"
     MSO70KDX = "MSO70KDX"
     TSOVU = "TSOVu"
+    # Keysight Scopes
+    INFINITIUM_S = "InfiniiumS"
+    INFINITIUM_V = "InfiniiumV"
+    INFINITIUM_MXR = "InfiniiumMXR"
+    INFINITIUM_EXR = "InfiniiumEXR"
+    INFINITIUM_UXR = "InfiniiumUXR"
     # Margin Testers
     TMT4 = "TMT4"
     # SMUs

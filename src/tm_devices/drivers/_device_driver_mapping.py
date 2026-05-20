@@ -40,6 +40,11 @@ from tm_devices.drivers.scopes.tekscope.mso5lp import MSO5LP
 from tm_devices.drivers.scopes.tekscope.mso6 import MSO6
 from tm_devices.drivers.scopes.tekscope.mso6b import MSO6B
 from tm_devices.drivers.scopes.tekscope.tekscopepc import TekScopePC
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_s import InfiniiumS
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_v import InfiniiumV
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_mxr import InfiniiumMXR
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_exr import InfiniiumEXR
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_uxr import InfiniiumUXR
 from tm_devices.drivers.scopes.tekscope_2k.dpo2k import DPO2K
 from tm_devices.drivers.scopes.tekscope_2k.dpo2kb import DPO2KB
 from tm_devices.drivers.scopes.tekscope_2k.mso2k import MSO2K
@@ -174,6 +179,12 @@ _DEVICE_DRIVER_MODEL_STR_MAPPING: "Mapping[str, type[Device]]" = MappingProxyTyp
         SupportedModels.TEKSCOPEPC.value: TekScopePC,
         SupportedModels.DPO7AX.value: DPO7AX,
         SupportedModels.TSOVU.value: TSOVu,
+        # Keysight Scopes
+        SupportedModels.INFINITIUM_S.value: InfiniiumS,
+        SupportedModels.INFINITIUM_V.value: InfiniiumV,
+        SupportedModels.INFINITIUM_MXR.value: InfiniiumMXR,
+        SupportedModels.INFINITIUM_EXR.value: InfiniiumEXR,
+        SupportedModels.INFINITIUM_UXR.value: InfiniiumUXR,
         # Margin Testers
         SupportedModels.TMT4.value: TMT4,
         # Source Measure Units

@@ -178,10 +178,10 @@ class AbstractTekScope(  # pylint: disable=too-many-public-methods
                 except visa.errors.Error:
                     # handle digital exclusive channels
                     if channel.startswith("DCH"):
-                        probetype: Literal["ANALOG", "DIGITAL"] = "DIGITAL"
+                        probetype = "DIGITAL"
                         probe_id_type = "N/A"
                     else:
-                        probetype: Literal["ANALOG", "DIGITAL"] = "ANALOG"
+                        probetype = "ANALOG"
                         probe_id_type = "1X"
                     probe = TekProbeData(probetype=probetype, probe_id_type=probe_id_type)
                 # verify probetype string is reliably one of ANALOG or DIGITAL

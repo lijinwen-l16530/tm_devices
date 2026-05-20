@@ -110,6 +110,12 @@ __SUPPORTED_MODEL_REGEX_STRING = (
     rf"|(?P<{SupportedModels.MSO70KDX.value}>^MSO7\d\d\d\dDX$)"
     rf"|(?P<{SupportedModels.TSOVU.value}>^TSOVU$)"
     rf"|(?P<{SupportedModels.TMT4.value}>^TMT4$)"
+    # Keysight Infiniium Scopes
+    rf"|(?P<{SupportedModels.INFINITIUM_S.value}>^(?:MSO|DSO)S\d\d\d[A-Z]?$)"
+    rf"|(?P<{SupportedModels.INFINITIUM_V.value}>^(?:MSO|DSO)V\d\d\d[A-Z]?$)"
+    rf"|(?P<{SupportedModels.INFINITIUM_MXR.value}>^MXR\d\d\d[A-Z]?$)"
+    rf"|(?P<{SupportedModels.INFINITIUM_EXR.value}>^EXR\d\d\d[A-Z]?$)"
+    rf"|(?P<{SupportedModels.INFINITIUM_UXR.value}>^UXR\d+[A-Z]*$)"
     # SMUs
     rf"|(?P<{SupportedModels.SMU2400.value}>^2400$)"
     rf"|(?P<{SupportedModels.SMU2401.value}>^2401$)"
@@ -377,7 +383,7 @@ def create_visa_connection(
         time.sleep(second_connection_attempt_delay)
         try:
             # noinspection PyTypeChecker
-            visa_object: MessageBasedResource = visa.ResourceManager(  # pyright: ignore[reportAssignmentType]
+            visa_object = visa.ResourceManager(  # pyright: ignore[reportAssignmentType]
                 visa_library
             ).open_resource(resource_expression)
         # The broad except is because pyvisa_py can throw a base exception in the tcpip.py file
