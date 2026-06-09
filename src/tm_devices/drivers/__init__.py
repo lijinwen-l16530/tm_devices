@@ -57,6 +57,13 @@ from tm_devices.drivers.scopes.tekscope_5k_7k_70k.mso5kb import MSO5KB
 from tm_devices.drivers.scopes.tekscope_5k_7k_70k.mso70k import MSO70K
 from tm_devices.drivers.scopes.tekscope_5k_7k_70k.mso70kc import MSO70KC
 from tm_devices.drivers.scopes.tekscope_5k_7k_70k.mso70kdx import MSO70KDX
+from tm_devices.drivers.scopes.keysight.keysight_scope import KeysightScope
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium import Infiniium
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_s import InfiniiumS
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_v import InfiniiumV
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_mxr import InfiniiumMXR
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_exr import InfiniiumEXR
+from tm_devices.drivers.scopes.keysight.infiniium.infiniium_uxr import InfiniiumUXR
 from tm_devices.drivers.scopes.tso.tsovu import TSOVu
 from tm_devices.drivers.data_acquisition_systems.daq6510 import DAQ6510
 from tm_devices.drivers.digital_multimeters.dmm6500 import DMM6500
