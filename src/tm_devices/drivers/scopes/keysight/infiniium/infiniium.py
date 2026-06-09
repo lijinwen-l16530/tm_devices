@@ -182,6 +182,22 @@ class InfiniiumCommands:
         """
         return self.channel
 
+    def rebuild_channel_collection(self, num_channels: int) -> None:
+        """Rebuild the channel collection with a new channel count.
+
+        This is useful when a subclass overrides ``NUM_CHANNELS`` and needs to
+        reset the lazy-loaded channel collection.
+
+        Args:
+            num_channels: The new number of analog channels.
+        """
+        self._channel = InfiniiumChannelCollection(self._device, num_channels)
+
+    @property
+    def current_channel_count(self) -> int:
+        """Return the current channel count used by the channel collection."""
+        return self._channel._num_channels if self._channel is not None else 0
+
     # ==========================================================================================
     # Tektronix-compatible aliases
     # ==========================================================================================
@@ -319,10 +335,8 @@ class Infiniium(
         """
         if self._commands is None:
             self._commands = InfiniiumCommands(self)
-        # Only recreate the channel collection if the number of channels has changed
-        chan = self._commands._channel
-        if chan is None or chan._num_channels != self.NUM_CHANNELS:
-            self._commands._channel = InfiniiumChannelCollection(self, self.NUM_CHANNELS)
+        if self._commands.current_channel_count != self.NUM_CHANNELS:
+            self._commands.rebuild_channel_collection(self.NUM_CHANNELS)
         return self._commands.channel
 
     @cached_property
