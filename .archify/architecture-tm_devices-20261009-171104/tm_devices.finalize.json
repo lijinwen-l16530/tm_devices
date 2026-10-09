@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-09T17:12:26.135Z",
+  "specification": {
+    "path": "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+    "sha256": "677169177ac29249fd6ca14afb59ef4a96745557c2c43d4a29e11f71d6a8608b",
+    "bytes": 5388
+  },
+  "artifact": {
+    "path": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+    "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+    "bytes": 775599
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "/root/.nvm/versions/node/v24.1.0/bin/node",
+        "/data/user/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "677169177ac29249fd6ca14afb59ef4a96745557c2c43d4a29e11f71d6a8608b",
+          "bytes": 5388
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 845,
+      "command": [
+        "/root/.nvm/versions/node/v24.1.0/bin/node",
+        "/data/user/skills/archify/bin/archify.mjs",
+        "deliver",
+        "architecture",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "--quality",
+        "showcase",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "4acca94d-71b4-479d-ba6b-b38a15bde254",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+        "output": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "specification": {
+          "sha256": "677169177ac29249fd6ca14afb59ef4a96745557c2c43d4a29e11f71d6a8608b",
+          "bytes": 5388
+        },
+        "artifact": {
+          "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+          "bytes": 775599
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 443,
+      "command": [
+        "/root/.nvm/versions/node/v24.1.0/bin/node",
+        "/data/user/skills/archify/bin/archify.mjs",
+        "check",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "artifact": {
+          "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+          "bytes": 775599
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 5,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 7,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.6,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 3,
+            "maxStretch": 1.667,
+            "routesOverSuggestedStretch": 1,
+            "minSegmentPx": 24,
+            "minInteriorSegmentPx": 40,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [
+              {
+                "left": {
+                  "id": "c_base_family",
+                  "from": "device_base",
+                  "to": "family_base",
+                  "label": "继承",
+                  "collectionIndex": 4,
+                  "artifactIndex": 5
+                },
+                "right": {
+                  "id": "c_base_helpers",
+                  "from": "device_base",
+                  "to": "helpers",
+                  "label": "工具函数",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  430,
+                  357
+                ],
+                "sharedNode": "device_base"
+              },
+              {
+                "left": {
+                  "id": "c_family_shared",
+                  "from": "family_base",
+                  "to": "mixins_shared",
+                  "label": "复用",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "right": {
+                  "id": "c_concrete_commands",
+                  "from": "concrete_drivers",
+                  "to": "commands",
+                  "label": "SCPI 命令",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "point": [
+                  430,
+                  517
+                ]
+              },
+              {
+                "left": {
+                  "id": "c_concrete_commands",
+                  "from": "concrete_drivers",
+                  "to": "commands",
+                  "label": "SCPI 命令",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "right": {
+                  "id": "c_base_helpers",
+                  "from": "device_base",
+                  "to": "helpers",
+                  "label": "工具函数",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  304,
+                  645.2727272727273
+                ]
+              },
+              {
+                "left": {
+                  "id": "c_concrete_commands",
+                  "from": "concrete_drivers",
+                  "to": "commands",
+                  "label": "SCPI 命令",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "right": {
+                  "id": "c_control_rest",
+                  "from": "mixins_control",
+                  "to": "rest_api",
+                  "label": "HTTP 请求",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "point": [
+                  304,
+                  555.4
+                ]
+              },
+              {
+                "left": {
+                  "id": "c_base_helpers",
+                  "from": "device_base",
+                  "to": "helpers",
+                  "label": "工具函数",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "c_control_rest",
+                  "from": "mixins_control",
+                  "to": "rest_api",
+                  "label": "HTTP 请求",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "point": [
+                  300,
+                  552.3846153846154
+                ]
+              }
+            ],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "c_concrete_commands",
+                  "from": "concrete_drivers",
+                  "to": "commands",
+                  "label": "SCPI 命令",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "bends": 4,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "c_base_helpers",
+                  "from": "device_base",
+                  "to": "helpers",
+                  "label": "工具函数",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "bends": 4,
+                "stretch": 1.667
+              },
+              {
+                "relationship": {
+                  "id": "c_pyvisa_inst",
+                  "from": "pyvisa",
+                  "to": "instruments",
+                  "label": "SCPI over VISA",
+                  "collectionIndex": 13,
+                  "artifactIndex": 14
+                },
+                "bends": 3,
+                "stretch": 1.09,
+                "directCorridorBlockers": [
+                  {
+                    "id": "rest_api",
+                    "label": "REST API (HTTP)",
+                    "box": [
+                      360,
+                      820,
+                      200,
+                      64
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 30,
+            "emptyTopRatio": 0.031,
+            "occupiedTop": 30,
+            "viewBoxTop": 0,
+            "canvasHeight": 976,
+            "typicalNodeHeight": 64,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "family_base"
+            },
+            "minimumSourceTextPx": 6.6,
+            "minimumProjectedTextPx": 6.6,
+            "semanticTextCount": 46
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "4acca94d-71b4-479d-ba6b-b38a15bde254"
+      }
+    },
+    "browser-check": {
+      "status": "skipped",
+      "exitCode": 2,
+      "durationMs": 21,
+      "command": [
+        "/root/.nvm/versions/node/v24.1.0/bin/node",
+        "/data/user/skills/archify/bin/archify.mjs",
+        "browser-check",
+        "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "skipped",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "4acca94d-71b4-479d-ba6b-b38a15bde254",
+        "artifact": {
+          "path": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+          "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+          "bytes": 775599
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "unavailable",
+          "executable": null
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/chrome-unavailable",
+            "severity": "warning",
+            "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+            "subject": {
+              "artifact": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html"
+            },
+            "evidence": {
+              "executable": null
+            },
+            "supportedFixes": [
+              "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "skipped",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "readability": {
+          "status": "skipped",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "skipped",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "tm_devices.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.finalize.json",
+    "summaryReceipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-09T17:12:27.551Z",
+  "durationMs": 1415,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-09T17:11:41.325Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

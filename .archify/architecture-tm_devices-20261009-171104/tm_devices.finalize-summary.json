@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "skipped",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+    "sha256": "677169177ac29249fd6ca14afb59ef4a96745557c2c43d4a29e11f71d6a8608b",
+    "bytes": 5388
+  },
+  "artifact": {
+    "path": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+    "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+    "bytes": 775599
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "skipped"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/chrome-unavailable",
+      "severity": "warning",
+      "message": "Chrome or Chromium is unavailable. Set ARCHIFY_CHROME to its executable path.",
+      "subject": {
+        "artifact": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html"
+      },
+      "evidence": {
+        "executable": null
+      },
+      "supportedFixes": [
+        "set ARCHIFY_CHROME to a Chrome or Chromium executable and rerun browser-check"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.finalize.json",
+    "summaryReceipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.finalize-summary.json",
+    "browserCheckReceipt": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.0.1",
+    "availableVersion": "3.0.1",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-09T17:11:41.325Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 1415
+}

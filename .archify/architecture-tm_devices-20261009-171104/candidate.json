@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "tm_devices 项目架构",
+    "subtitle": "Tektronix 设备自动化 Python 库 · 分层架构与调用关系",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "user_app", "type": "external", "label": "用户脚本 / 自动化", "sublabel": "Python API 调用", "pos": [60, 60], "size": [170, 64] },
+
+    { "id": "device_manager", "type": "backend", "label": "DeviceManager", "sublabel": "单例 · 设备连接管理", "pos": [330, 60], "size": [200, 64], "tag": "核心入口" },
+    { "id": "config_parser", "type": "backend", "label": "DMConfigParser", "sublabel": "配置文件 / 环境变量", "pos": [620, 60], "size": [180, 64] },
+
+    { "id": "device_base", "type": "backend", "label": "Device", "sublabel": "基类 (ABC)", "pos": [330, 210], "size": [200, 64] },
+    { "id": "driver_mapping", "type": "backend", "label": "型号→驱动映射", "sublabel": "_device_driver_mapping", "pos": [620, 210], "size": [180, 64] },
+
+    { "id": "family_base", "type": "backend", "label": "Family Base Classes", "sublabel": "AFG · AWG · Scope · SMU · DMM · PSU · DAQ · MF · MT · SS", "pos": [315, 360], "size": [230, 76] },
+    { "id": "concrete_drivers", "type": "backend", "label": "具体驱动 (80+ 系列)", "sublabel": "AFG3K · AWG70KA · DPO70KC · SMU2450 …", "pos": [620, 360], "size": [220, 76] },
+
+    { "id": "mixins_control", "type": "backend", "label": "device_control", "sublabel": "PI / TSP / REST / VISA", "pos": [60, 520], "size": [190, 64] },
+    { "id": "mixins_shared", "type": "backend", "label": "shared_implementations", "sublabel": "错误检查 / 公共命令", "pos": [310, 520], "size": [210, 64] },
+    { "id": "mixins_func", "type": "backend", "label": "abstract_device_func", "sublabel": "通道 / 信号源 / 截屏", "pos": [580, 520], "size": [220, 64] },
+
+    { "id": "commands", "type": "backend", "label": "commands", "sublabel": "自动生成 SCPI 命令集", "pos": [60, 670], "size": [220, 64], "tag": "gen_xxx 分组" },
+    { "id": "helpers", "type": "backend", "label": "helpers", "sublabel": "logging / enums / 函数 / 校验", "pos": [360, 670], "size": [240, 64] },
+
+    { "id": "pyvisa", "type": "external", "label": "PyVISA / pyvisa-py", "sublabel": "VISA 资源管理", "pos": [60, 820], "size": [200, 64] },
+    { "id": "rest_api", "type": "external", "label": "REST API (HTTP)", "sublabel": "Margin Tester 通信", "pos": [360, 820], "size": [200, 64] },
+    { "id": "instruments", "type": "external", "label": "物理 / 虚拟仪器", "sublabel": "Tektronix 设备", "pos": [660, 820], "size": [200, 64] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "tm_devices Python 包", "wraps": ["device_manager", "config_parser", "device_base", "driver_mapping", "family_base", "concrete_drivers", "mixins_control", "mixins_shared", "mixins_func", "commands", "helpers"] }
+  ],
+  "connections": [
+    { "id": "c_user_dm", "from": "user_app", "to": "device_manager", "label": "调用", "variant": "emphasis" },
+    { "id": "c_dm_config", "from": "device_manager", "to": "config_parser", "label": "读取配置", "variant": "dashed" },
+    { "id": "c_dm_device", "from": "device_manager", "to": "device_base", "label": "创建驱动实例", "variant": "emphasis" },
+    { "id": "c_dm_mapping", "from": "device_manager", "to": "driver_mapping", "label": "查询型号", "variant": "dashed" },
+    { "id": "c_base_family", "from": "device_base", "to": "family_base", "label": "继承" },
+    { "id": "c_family_concrete", "from": "family_base", "to": "concrete_drivers", "label": "继承" },
+    { "id": "c_base_control", "from": "device_base", "to": "mixins_control", "label": "通信控制" },
+    { "id": "c_family_shared", "from": "family_base", "to": "mixins_shared", "label": "复用" },
+    { "id": "c_concrete_func", "from": "concrete_drivers", "to": "mixins_func", "label": "功能扩展" },
+    { "id": "c_concrete_commands", "from": "concrete_drivers", "to": "commands", "label": "SCPI 命令" },
+    { "id": "c_base_helpers", "from": "device_base", "to": "helpers", "label": "工具函数" },
+    { "id": "c_control_pyvisa", "from": "mixins_control", "to": "pyvisa", "label": "VISA I/O", "variant": "security" },
+    { "id": "c_control_rest", "from": "mixins_control", "to": "rest_api", "label": "HTTP 请求", "variant": "security" },
+    { "id": "c_pyvisa_inst", "from": "pyvisa", "to": "instruments", "label": "SCPI over VISA" },
+    { "id": "c_rest_inst", "from": "rest_api", "to": "instruments", "label": "REST", "variant": "dashed" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "设备管理层", "items": ["DeviceManager 单例是包的骨架", "DMConfigParser 从文件/环境变量/Python 代码读取配置", "按型号查找驱动类并建立连接"] },
+    { "dot": "cyan", "title": "驱动继承体系", "items": ["Device → 设备族基类 → 具体系列驱动（80+）", "Mixin 复用 PI/TSP/REST/VISA 通信与公共逻辑", "commands 目录按 gen_xxx 自动生成 SCPI 命令集"] },
+    { "dot": "rose", "title": "通信与外部", "items": ["PyVISA/pyvisa-py 处理 TCPIP/USB/GPIB/Serial", "REST API 专用于 Margin Tester", "支持物理仪器与虚拟仿真"] }
+  ]
+}

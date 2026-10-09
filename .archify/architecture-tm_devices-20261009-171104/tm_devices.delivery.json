@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "4acca94d-71b4-479d-ba6b-b38a15bde254",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "/workspace/.archify/architecture-tm_devices-20261009-171104/candidate.json",
+  "output": "/workspace/.archify/architecture-tm_devices-20261009-171104/tm_devices.html",
+  "specification": {
+    "sha256": "677169177ac29249fd6ca14afb59ef4a96745557c2c43d4a29e11f71d6a8608b",
+    "bytes": 5388
+  },
+  "artifact": {
+    "sha256": "c2ce471bf6a6e15026ed1f174e89ccf16f770cc292f35fce28539f1019f3146e",
+    "bytes": 775599
+  }
+}
